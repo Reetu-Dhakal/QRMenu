@@ -192,12 +192,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
                 extend: {
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
                     colors: {
-                        brand: { 50:'#FFF7ED',100:'#FFEDD5',200:'#FED7AA',300:'#FDBA74',400:'#FB923C',500:'#F97316',600:'#EA580C',700:'#C2410C' },
-                        ok: { 50:'#F0FDF4',100:'#DCFCE7',500:'#22C55E',600:'#16A34A' },
-                        ink: '#0F172A',
-                        mute: '#64748B',
-                        line: '#E2E8F0',
-                        page: '#FAFBFC',
+                        brand: { 50:'#F8FAFC',100:'#E2E8F0',200:'#CBD5E1',300:'#94A3B8',400:'#64748B',500:'#475569',600:'#334155',700:'#1E293B' },
+                        ok: { 50:'#F8FAFC',100:'#E2E8F0',500:'#64748B',600:'#475569' },
+                        ink: '#F8FAFC',
+                        mute: '#94A3B8',
+                        line: '#334155',
+                        page: '#020617',
                     }
                 }
             }
@@ -249,9 +249,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
 
         @keyframes fade-in { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
         .fade-in { animation: fade-in .4s ease forwards; }
+
+        body { background: #020617; color: #f8fafc; }
+        .bg-white { background-color: #111827 !important; }
+        .bg-page, .bg-page\/60, .bg-page\/30 { background-color: #020617 !important; }
+        .text-ink { color: #f8fafc !important; }
+        .text-mute { color: #94a3b8 !important; }
+        .border-line, .border-line\/50, .border-line\/40, .border-line\/60 { border-color: #334155 !important; }
+        .bg-brand-50, .bg-brand-100, .bg-brand-200 { background-color: #111827 !important; }
+        .bg-brand-500 { background-color: #475569 !important; }
+        .text-brand-600 { color: #cbd5e1 !important; }
+        .bg-ok-50, .bg-ok-100 { background-color: #111827 !important; }
+        .text-ok-600 { color: #cbd5e1 !important; }
+        .card-lift { box-shadow: none; }
+        .nav-link::after { background: #94a3b8; }
     </style>
 </head>
-<body class="bg-white text-ink antialiased">
+<body class="bg-slate-950 text-slate-100 antialiased">
 
 <!-- ===== NAVBAR ===== -->
 <nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
@@ -270,8 +284,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
             <a href="#contact" class="nav-link text-[13px] font-medium text-mute hover:text-ink transition-colors">Contact</a>
         </div>
         <div class="hidden md:flex items-center gap-4">
-            <a href="#" class="text-[13px] font-medium text-mute hover:text-ink transition-colors">Log in</a>
-            <a href="#" class="text-[13px] font-semibold text-white bg-ink hover:bg-slate-800 px-5 py-2 rounded-xl transition-colors">Register Restaurant</a>
+            <a href="auth/login.php" class="text-[13px] font-medium text-mute hover:text-ink transition-colors">Log in</a>
+            <a href="auth/login.php" class="text-[13px] font-semibold text-white bg-ink hover:bg-slate-800 px-5 py-2 rounded-xl transition-colors">Access Dashboard</a>
         </div>
         <button id="menuBtn" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg hover:bg-page transition-colors">
             <iconify-icon icon="solar:hamburger-menu-linear" class="text-xl"></iconify-icon>
@@ -285,8 +299,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
             <a href="#faq" class="block py-2 text-sm text-mute hover:text-ink">FAQ</a>
             <a href="#contact" class="block py-2 text-sm text-mute hover:text-ink">Contact</a>
             <div class="pt-3 mt-2 border-t border-line flex flex-col gap-2">
-                <a href="#" class="py-2 text-sm text-mute">Log in</a>
-                <a href="#" class="text-sm font-semibold text-white bg-ink px-5 py-2.5 rounded-xl text-center">Register Restaurant</a>
+                <a href="auth/login.php" class="py-2 text-sm text-mute">Log in</a>
+                <a href="auth/login.php" class="text-sm font-semibold text-white bg-ink px-5 py-2.5 rounded-xl text-center">Access Dashboard</a>
             </div>
         </div>
     </div>
@@ -311,12 +325,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
                     Manage QR menus, orders, tables, staff, and analytics from one simple cloud platform built for restaurants.
                 </p>
                 <div class="flex flex-wrap gap-3 mt-8 reveal">
-                    <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-ink hover:bg-slate-800 px-6 py-3 rounded-2xl transition-colors">
-                        Start Free Trial
+                    <a href="auth/login.php" class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-ink hover:bg-slate-800 px-6 py-3 rounded-2xl transition-colors">
+                        Open Dashboard
                         <iconify-icon icon="solar:arrow-right-linear" class="text-sm"></iconify-icon>
                     </a>
-                    <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-ink bg-white hover:bg-page border border-line px-6 py-3 rounded-2xl transition-colors">
-                        Book a Demo
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-ink bg-white hover:bg-page border border-line px-6 py-3 rounded-2xl transition-colors">
+                        Contact Us
                     </a>
                 </div>
                 <div class="flex flex-wrap gap-x-5 gap-y-1.5 mt-9 reveal">

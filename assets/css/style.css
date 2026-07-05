@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary-color: #4F46E5;
-    --primary-hover: #4338CA;
-    --secondary-color: #10B981;
-    --bg-color: #F8FAFC;
-    --card-bg: #FFFFFF;
-    --text-main: #111827;
-    --text-muted: #64748B;
-    --border-color: #E2E8F0;
-    --danger: #EF4444;
-    --warning: #F59E0B;
-    --info: #3B82F6;
-    --sidebar-bg: #0F172A;
+    --primary-color: #6B7280;
+    --primary-hover: #4B5563;
+    --secondary-color: #8B95A7;
+    --bg-color: #060B14;
+    --card-bg: #111827;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border-color: #233142;
+    --danger: #F87171;
+    --warning: #FBBF24;
+    --info: #93C5FD;
+    --sidebar-bg: #0B1220;
     --sidebar-text: #F8FAFC;
-    --sidebar-hover: #1E293B;
-    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.08);
-    --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.14);
+    --sidebar-hover: #182233;
+    --shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.24);
+    --shadow-md: 0 12px 30px rgba(2, 6, 23, 0.28);
+    --shadow-lg: 0 20px 45px rgba(2, 6, 23, 0.34);
     --border-radius: 16px;
     --transition: all 0.25s ease;
 }
@@ -30,7 +30,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 22%), linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    background: linear-gradient(135deg, #060B14 0%, #0F172A 100%);
     color: var(--text-main);
     line-height: 1.5;
     min-height: 100vh;
@@ -53,12 +53,12 @@ a:hover {
 
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+    background: linear-gradient(180deg, #0B1220 0%, #111827 100%);
     color: var(--sidebar-text);
     display: flex;
     flex-direction: column;
     padding: 24px 18px;
-    box-shadow: 12px 0 30px rgba(15, 23, 42, 0.18);
+    box-shadow: 12px 0 30px rgba(2, 6, 23, 0.28);
 }
 
 .sidebar-header {
@@ -109,8 +109,8 @@ a:hover {
     align-items: center;
     margin-bottom: 24px;
     padding: 22px 24px;
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--border-color);
+    background: rgba(17, 24, 39, 0.92);
     backdrop-filter: blur(16px);
     border-radius: 24px;
     box-shadow: var(--shadow-md);
@@ -167,8 +167,8 @@ a:hover {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 24px;
     box-shadow: var(--shadow-md);
     padding: 22px;
@@ -201,7 +201,7 @@ a:hover {
 .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 .stat-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 22px;
@@ -256,11 +256,12 @@ a:hover {
 .form-control {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #dbe3f0;
+    border: 1px solid var(--border-color);
     border-radius: 14px;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    background: #f8fafc;
+    background: #0f172a;
+    color: var(--text-main);
     transition: var(--transition);
 }
 
@@ -292,22 +293,22 @@ a:hover {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), #6366f1);
+    background: linear-gradient(135deg, var(--primary-color), #7A869A);
     color: #fff;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--primary-hover), #4f46e5);
+    background: linear-gradient(135deg, var(--primary-hover), #6B7280);
     color: #fff;
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, var(--secondary-color), #34d399);
+    background: linear-gradient(135deg, #182233, #273449);
     color: #fff;
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(135deg, #059669, #10b981);
+    background: linear-gradient(135deg, #1F2937, #334155);
     color: #fff;
 }
 
@@ -343,7 +344,7 @@ th, td {
 }
 
 th {
-    background-color: #f8fafc;
+    background-color: #0f172a;
     font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -352,7 +353,7 @@ th {
 }
 
 tr:hover {
-    background-color: #f8fafc;
+    background-color: #0f172a;
 }
 
 .badge {
@@ -379,13 +380,13 @@ tr:hover {
 }
 
 .login-card {
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(17, 24, 39, 0.96);
     padding: 38px;
     border-radius: 28px;
     box-shadow: var(--shadow-lg);
     width: 100%;
     max-width: 440px;
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border: 1px solid var(--border-color);
 }
 
 .brand-badge {
